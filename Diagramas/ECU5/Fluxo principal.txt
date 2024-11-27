@@ -1,0 +1,19 @@
+title Fluxo Alternativo - RN3 Não Cumprida
+actor Discente
+
+Discente -> Camada de Apresentação: Include <Identificar usuario>
+
+Discente -> Camada de Apresentação: criarPedidoIntencao(dadosPedido) 
+
+Camada de Apresentação -> PedidoIntencaoEstagioServico: processarPedido(dadosPedido)
+
+PedidoIntencaoEstagioServico -> EstagioMTE: verificarRN1(creditosCumpridos)
+EstagioMTE -> PedidoIntencaoEstagioServico: RN1 válida
+
+PedidoIntencaoEstagioServico -> EstagioMTE: verificarRN2(ira)
+EstagioMTE -> PedidoIntencaoEstagioServico: RN2 válida
+
+PedidoIntencaoEstagioServico -> EstagioMTE: verificarRN3(cargaHorariaSemanal)
+EstagioMTE -> PedidoIntencaoEstagioServico: RN3 inválida
+
+PedidoIntencaoEstagioServico -->> Discente: "Erro:  O Estágio Supervisionado deverá ter carga horária máxima de 30 horas por semana."

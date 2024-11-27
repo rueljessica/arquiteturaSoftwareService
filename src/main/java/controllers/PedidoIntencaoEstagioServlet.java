@@ -55,9 +55,9 @@ public class PedidoIntencaoEstagioServlet extends HttpServlet {
                 primeiroEstagio, nomeEmpresa, enderecoEmpresa, modalidadeEstagio, cargaHorariaSemanal, valorBolsa,
                 resumoAtividades, conteudosTeoricos, motivoIntencao);
 
-            response.getWriter().println("<div style='color: green;'>Seu pedido de intenção de estágio foi criado com sucesso!</div>");
+            response.getWriter().println("<div style='color: green;'>Seu pedido de intençao de estagio foi criado com sucesso!</div>");
         } catch (Exception e) {
-            response.getWriter().println("<div style='color: red;'>Não foi possível criar o pedido: " + e.getMessage() + "</div>");
+            response.getWriter().println("<div style='color: red;'>Nao foi possível criar o pedido: " + e.getMessage() + "</div>");
         }
     }
 }
